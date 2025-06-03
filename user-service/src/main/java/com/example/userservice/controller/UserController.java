@@ -7,11 +7,16 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
 
     private final UserService userService;
+    private static final Logger logger = LoggerFactory.getLogger(UserController.class);
+
 
     public UserController(UserService userService) {
         this.userService = userService;
@@ -19,6 +24,7 @@ public class UserController {
 
     @GetMapping
     public List<User> getAllUsers() {
+        logger.info("Get all users");
         return userService.getAllUsers();
     }
 
