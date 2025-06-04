@@ -1,6 +1,58 @@
 version: '3.7'
 services:
 
+#  mysql:
+#    image: mysql:8.0
+#    container_name: mysql
+#    restart: always
+#    ports:
+#      - "3307:3306"
+#    environment:
+#      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+#    volumes:
+#      - ./init:/docker-entrypoint-initdb.d
+#      - mysql_data:/var/lib/mysql
+#    healthcheck:
+#      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+#      interval: 10s
+#      timeout: 5s
+#      retries: 5
+#
+#
+#  discovery-service:
+#    build:
+#      context: ./discovery-service
+#    ports:
+#      - "8761:8761"
+#
+#  user-service:
+#    build:
+#      context: ./user-service
+#    ports:
+#      - "8081:8081"
+#    environment:
+#      - DB_USERNAME=${DB_USERNAME}
+#      - DB_PASSWORD=${DB_PASSWORD}
+#    depends_on:
+#      discovery-service:
+#        condition: service_started
+#      mysql:
+#        condition: service_healthy
+#
+#  messaging-service:
+#    build:
+#      context: ./messaging-service
+#    ports:
+#      - "8082:8082"
+#    environment:
+#      - DB_USERNAME=${DB_USERNAME}
+#      - DB_PASSWORD=${DB_PASSWORD}
+#    depends_on:
+#      discovery-service:
+#        condition: service_started
+#      mysql:
+#        condition: service_healthy
+
   prometheus:
     image: prom/prometheus
     container_name: prometheus
@@ -31,3 +83,8 @@ services:
     command: -config.file=/etc/promtail/config.yaml
     depends_on:
       - loki
+
+
+
+volumes:
+  mysql_data:

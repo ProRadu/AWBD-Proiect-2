@@ -10,6 +10,19 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/discovery-service" />
+            <option value="$PROJECT_DIR$/messaging-service" />
+            <option value="$PROJECT_DIR$/user-service" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/messaging-service" />
+        <option name="gradleJvm" value="ms-21" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/discovery-service" />
+            <option value="$PROJECT_DIR$/messaging-service" />
             <option value="$PROJECT_DIR$/user-service" />
           </set>
         </option>
@@ -20,6 +33,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/discovery-service" />
+            <option value="$PROJECT_DIR$/messaging-service" />
             <option value="$PROJECT_DIR$/user-service" />
           </set>
         </option>
